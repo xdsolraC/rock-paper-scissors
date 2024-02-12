@@ -80,7 +80,7 @@ let currentRound = document.querySelector("#round");
 let message = document.querySelector(".message");
 let playerScore = document.querySelector("#player-score");
 let computerScore = document.querySelector("#computer-score");
-let rounds = 0;
+let roundsPlayed = 0;
 let playerWins = 0;
 let computerWins = 0;
 
