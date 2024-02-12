@@ -55,6 +55,12 @@ function displayResults(results) {
 
     playerScore.textContent = playerWins;
     computerScore.textContent = computerWins;
+
+    if (playerWins >= 5) {
+        endGame("green", "You won the game!");
+    } else if (computerWins >= 5) {
+        endGame("red", "Computer won the game!");
+    }
 }
 
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
