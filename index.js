@@ -26,6 +26,13 @@ function getResults(playerSelection, computerSelection = getComputerChoice()) {
     }
 }
 
+function disableButtons(nodeList) {
+    nodeList.forEach((button) => {
+        button.removeEventListener("click", playRoundEventListener);
+        button.disabled = true;
+    });
+}
+
 function displayResults(results) {
     message.textContent = results.message;
 
