@@ -33,6 +33,12 @@ function disableButtons(nodeList) {
     });
 }
 
+function endGame(messageColor, endMessage) {
+    message.style.color = messageColor;
+    message.textContent = endMessage;
+    disableButtons(buttons);
+}
+
 function displayResults(results) {
     message.textContent = results.message;
 
