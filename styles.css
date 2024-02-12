@@ -25,3 +25,35 @@ body {
     margin: 20px;
     border-radius: 8px;
 }
+
+.selectionButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.selection {
+    cursor: pointer;
+    padding: 20px;
+    border: 3px #8fbc8f solid;
+    background-color: palegreen;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selection:hover {
+    background-color: #8fbc8f;
+}
+
+.selection:nth-child(1) {
+    transform: scaleX(-1) rotate(-90deg);
+}
+
+.selection:nth-child(3) {
+    transform: rotate(-90deg);
+}
+
+.selection img {
+    width: 50px;
+}
