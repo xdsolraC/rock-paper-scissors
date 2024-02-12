@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     min-width: 100vw;
 }
 
@@ -77,4 +77,16 @@ body {
 
 .restartBtn:hover {
     background-color: #8fbc8f;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer a {
+    color: #8fbc8f;
+    text-decoration: none;
 }
