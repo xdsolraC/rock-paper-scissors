@@ -52,6 +52,15 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     return playRound(playerSelection)
 }
 
+const buttons = document.querySelectorAll(".selection");
 let rounds = 0;
 let playerWins = 0;
 let computerWins = 0;
+
+function playRoundEventListener(elem) {
+    elem.addEventListener("click", () => {
+      playRound(elem.id);
+    });
+  }
+
+buttons.forEach((elem) => playRoundEventListener(elem));
