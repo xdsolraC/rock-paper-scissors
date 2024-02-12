@@ -1,47 +1,78 @@
 function game() {
-    
     function getComputerChoice() {
         let choices = ["Rock", "Paper", "Scissors"]
         return choices[Math.round(Math.random() * 2)];
     }
-    
+
     function playRound(playerSelection, computerSelection = getComputerChoice()) {
         let userChoice = playerSelection.toLowerCase();
         let computerChoice = computerSelection.toLowerCase();
-    
+
         if (userChoice == "rock" && computerChoice == "scissors") {
-            return "You Win! Rock beats Scissors";
+            return {
+                winner: "player",
+                message: "You Win! Rock beats Scissors"
+            }
         }
-    
+
         else if (userChoice == "rock" && computerChoice == "paper") {
-            return "You Lose! Paper beats Rock";
+            return {
+                winner: "computer",
+                message: "You Lose! Paper beats Rock"
+            }
         }
-    
+
         else if (userChoice == "paper" && computerChoice == "rock") {
-            return "You Win! Paper beats Rock";
+            return {
+                winner: "player",
+                message: "You Win! Paper beats Rock"
+            }
         }
-    
+
         else if (userChoice == "paper" && computerChoice == "scissors") {
-            return "You Lose! Scissors beats Paper";
+            return {
+                winner: "computer",
+                message: "You Lose! Scissors beats Paper"
+            }
         }
-    
+
         else if (userChoice == "scissors" && computerChoice == "paper") {
-            return "You Win! Scissors beats Paper";
+            return {
+                winner: "player",
+                message: "You Win! Scissors beats Paper"
+            }
         }
-    
+
         else if (userChoice == "scissors" && computerChoice == "rock") {
-            return "You Lose! Rock beats Scissors";
+            return {
+                winner: "computer",
+                message: "You Lose! Rock beats Scissors"
+            }
         }
-    
+
         return playRound(playerSelection)
     }
 
-    let contador = 1;
+    let rounds = 0;
+    let playerWins = 0;
+    let computerWins = 0;
 
-    while (contador <= 5) {
+    while (rounds < 5) {
         let playerSelection = String(prompt("Check the console and choose between Rock, Paper, and Scissors"))
-        console.log(playRound(playerSelection))
-        contador++
+        let results = playRound(playerSelection)
+        console.log(results.message)
+        if (results.winner == "player") {
+            playerWins++
+        } else {
+            computerWins++
+        }
+        rounds++
+    }
+
+    if (playerWins > 2) {
+        console.log("You Won!")
+    } else {
+        console.log("Computer Won!")
     }
 }
 
