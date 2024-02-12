@@ -26,6 +26,24 @@ function getResults(playerSelection, computerSelection = getComputerChoice()) {
     }
 }
 
+function displayResults(results) {
+    message.textContent = results.message;
+
+    if (results.winner === "computer" || results.winner === "player") {
+        roundsPlayed++;
+        currentRound.textContent = roundsPlayed;
+    }
+
+    if (results.winner === "computer") {
+        computerWins++;
+    } else if (results.winner === "player") {
+        playerWins++;
+    }
+
+    playerScore.textContent = playerWins;
+    computerScore.textContent = computerWins;
+}
+
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     let userChoice = playerSelection.toLowerCase();
     let computerChoice = computerSelection.toLowerCase();
