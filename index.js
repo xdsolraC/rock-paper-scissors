@@ -94,3 +94,7 @@ function playRoundEventListener(elem) {
 }
 
 buttons.forEach((elem) => playRoundEventListener(elem));
+
+restartBtn.addEventListener("click", () => {
+    location.reload();
+});
