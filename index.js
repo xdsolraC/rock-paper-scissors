@@ -3,6 +3,29 @@ function getComputerChoice() {
     return choices[Math.round(Math.random() * 2)];
 }
 
+function getResults(playerSelection, computerSelection = getComputerChoice()) {
+    const userChoice = playerSelection.toLowerCase();
+    const computerChoice = computerSelection.toLowerCase();
+
+    if (userChoice === computerChoice) {
+        return { winner: null, message: "Draw!" };
+    } else if (
+        (userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "paper" && computerChoice === "rock") ||
+        (userChoice === "scissors" && computerChoice === "paper")
+    ) {
+        return {
+            winner: "player",
+            message: `You Win! ${userChoice} beats ${computerChoice}`,
+        };
+    } else {
+        return {
+            winner: "computer",
+            message: `You Lose! ${computerChoice} beats ${userChoice}`,
+        };
+    }
+}
+
 function playRound(playerSelection, computerSelection = getComputerChoice()) {
     let userChoice = playerSelection.toLowerCase();
     let computerChoice = computerSelection.toLowerCase();
@@ -59,8 +82,8 @@ let computerWins = 0;
 
 function playRoundEventListener(elem) {
     elem.addEventListener("click", () => {
-      playRound(elem.id);
+        playRound(elem.id);
     });
-  }
+}
 
 buttons.forEach((elem) => playRoundEventListener(elem));
