@@ -37,6 +37,7 @@ function endGame(messageColor, endMessage) {
     message.style.color = messageColor;
     message.textContent = endMessage;
     disableButtons(buttons);
+    gameContainer.appendChild(restartBtn);
 }
 
 function displayResults(results) {
