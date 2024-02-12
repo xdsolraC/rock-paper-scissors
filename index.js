@@ -75,7 +75,13 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
     return playRound(playerSelection)
 }
 
+// Global variables
 const buttons = document.querySelectorAll(".selection");
+let gameContainer = document.querySelector(".gameContainer");
+let currentRound = document.querySelector("#round");
+let message = document.querySelector(".message");
+let playerScore = document.querySelector("#player-score");
+let computerScore = document.querySelector("#computer-score");
 let rounds = 0;
 let playerWins = 0;
 let computerWins = 0;
